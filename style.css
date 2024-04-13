@@ -1,0 +1,138 @@
+:root{
+  --first:#f18b77; --ffirst:#dc654d;
+  --second:#725a9f; --ssecond:#55437a;
+  --third:#b569af; --tthird:#92508c;
+  --fourth:#7fb3ee; --ffourth:#4b77a9;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem;
+  background-color: #f1e0fcbf;
+}
+
+.squares{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 75rem;
+  margin: auto;
+  
+}
+
+.square{
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  width: 25%;
+  cursor: pointer;
+  padding: 2.1rem;
+  
+}
+.square:nth-of-type(1){
+background-color:var(--first) ;
+}
+.square:nth-of-type(2){
+  background-color: var(--second) ;
+}
+.square:nth-of-type(3){
+  background-color: var(--third) ;
+}
+.square:nth-of-type(4){
+  background-color: var(--fourth) ;
+}
+
+.square:nth-of-type(1):after,
+.square:nth-of-type(2):after,
+.square:nth-of-type(3):after{
+  position: absolute;
+  top: 45%;
+  right: -18px;
+  content: "";
+  border-top:20px solid rgba(255, 255, 255, 0);
+  border-bottom: 20px solid rgba(255, 255, 255, 0);
+  border-left: 20px solid var(--first);
+  z-index: 1;
+
+}
+.square:nth-of-type(2):after {
+  border-left: 20px solid var(--second);
+}
+
+.square:nth-of-type(3):after {
+  border-left: 20px solid var(--third);
+}
+
+.square:nth-of-type(1):hover{
+  background: var(--ffirst);
+
+}
+.square:nth-of-type(1):hover:after{
+  border-left: 20px solid var(--ffirst);
+}
+.square:nth-of-type(2):hover{
+  background: var(--ssecond);
+
+}
+.square:nth-of-type(2):hover:after{
+  border-left: 20px solid var(--ssecond);
+}
+.square:nth-of-type(3):hover{
+  background: var(--tthird);
+
+}
+.square:nth-of-type(3):hover:after{
+  border-left: 20px solid var(--tthird);
+}
+.square:nth-of-type(4):hover{
+  background: var(--ffourth);
+
+}
+
+
+.square h2 {
+  margin: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+ 
+}
+
+.square p {
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+  
+}
+
+@media all and (max-width: 950px) and (min-width: 700px) {
+  .square {
+    width: 50%;
+  }
+  
+  .square:nth-of-type(2):after {
+    border-left: 0px;
+  }
+}
+
+@media all and (max-width: 700px) and (min-width: 0px) {
+  .square {
+    display: block;
+    width: 100%;
+  }
+  
+  .square:nth-of-type(1):after,
+  .square:nth-of-type(2):after,
+  .square:nth-of-type(3):after {
+    border-left: 0px;
+  }
+}
